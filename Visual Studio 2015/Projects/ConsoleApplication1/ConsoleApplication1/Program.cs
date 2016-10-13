@@ -54,24 +54,25 @@ namespace ConsoleApplication1
         static int Alien(int X, int Y)
         {
             int[] tab = new int [32];
-            int eggs = 0;
-            int alien = 1;
             tab[0] = 1;
             for (int i = 1; i<tab.Length - 1; i++)
             {
-                eggs = tab[i] * X;
-                if (i % Y == 0)
+                if(i-1 != 5)
                 {
-                    alien = eggs * (Y - 1) + tab[i - Y];
+                    tab[i] = 1;
                 }
 
+                else
+                {
+                    tab[i] = X * tab[i - Y];
+                }
 
-                tab[i + 1] = alien;
-                Console.Write( alien + "|");
+                
+                Console.Write( tab[i] + "|");
             }
 
 
-            return alien;
+            return tab[32];
         }
         
         static void Main(string[] args)
