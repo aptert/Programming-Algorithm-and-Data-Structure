@@ -55,7 +55,7 @@ namespace ConsoleApplication1
         {
             int [] tab = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             //ex1(tab);
-            Console.WriteLine(ex2(10));
+            Console.WriteLine(ex2(14));
             
         }
     }
