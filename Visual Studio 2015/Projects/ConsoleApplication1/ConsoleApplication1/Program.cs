@@ -50,12 +50,35 @@ namespace ConsoleApplication1
             return count; 
         }
         //static int exDate(int day, int month, int year)
+
+        static int Alien(int X, int Y)
+        {
+            int[] tab = new int [32];
+            int eggs = 0;
+            int alien = 1;
+            tab[0] = 1;
+            for (int i = 1; i<tab.Length - 1; i++)
+            {
+                eggs = tab[i] * X;
+                if (i % Y == 0)
+                {
+                    alien = eggs * (Y - 1) + tab[i - Y];
+                }
+
+
+                tab[i + 1] = alien;
+                Console.Write( alien + "|");
+            }
+
+
+            return alien;
+        }
         
         static void Main(string[] args)
         {
             int [] tab = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             //ex1(tab);
-            Console.WriteLine(ex2(14));
+            Console.WriteLine("\n"+Alien(3,5));
             
         }
     }
