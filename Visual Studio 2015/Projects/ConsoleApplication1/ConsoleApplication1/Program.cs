@@ -53,10 +53,15 @@ namespace ConsoleApplication1
 
         static int Alien(int X, int Y)
         {
+<<<<<<< HEAD
             int[] tab = new int [30];
+=======
+            int[] tab = new int [32];
+>>>>>>> 83d48083193b9855dc330766510342fe8b985752
             tab[0] = 1;
             for (int i = 0; i < Y; i++)
             {
+<<<<<<< HEAD
                 tab[i] = 1;
                 Console.Write(tab[i] + "|");
             }
@@ -67,6 +72,24 @@ namespace ConsoleApplication1
             }
 
             return tab[29];
+=======
+                if(i-1 != 5)
+                {
+                    tab[i] = 1;
+                }
+
+                else
+                {
+                    tab[i] = X * tab[i - Y];
+                }
+
+                
+                Console.Write( tab[i] + "|");
+            }
+
+
+            return tab[32];
+>>>>>>> 83d48083193b9855dc330766510342fe8b985752
         }
         
         static void Main(string[] args)
