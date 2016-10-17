@@ -20,9 +20,67 @@ namespace Week_2
             }
             return square;
         }
+
+        static int[,] Add(int[,] a, int[,] b)
+        {
+            int dimension = a.GetLength(0);
+            int[,] c = new int[dimension, dimension];
+            for (int i = 0; i < dimension; i++)
+            {
+                for (int j = 0; j < dimension; j++)
+                {
+                    c[i, j] = a[i, j] + b[i, j];
+                }
+            }
+            return c;
+        }
+
+        static int[,] Sub(int[,] a, int[,] b)
+        {
+            int dimension = a.GetLength(0);
+            int[,] c = new int[dimension, dimension];
+            for (int i = 0; i < dimension; i++)
+            {
+                for (int j = 0; j < dimension; j++)
+                {
+                    c[i, j] = a[i, j] - b[i, j];
+                }
+            }
+            return c;
+        }
+        static int[,] Multiplcation(int[,] a, int [,] b)
+        {
+            int dimension = a.GetLength(0); //Matrices are the same size and they are square
+            int[,] c = new int[dimension, dimension];
+            for (int i = 0; i < dimension; i++)
+            {
+                for (int j = 0; j < dimension; j++)
+                {
+                    int k = 0;
+                    while (k < dimension)
+                    {
+                        c[i, j] += a[i, k] * b[k, j];
+                        k++;
+                    }
+                }
+            }
+            return c;
+        }
+
+
         static void Main(string[] args)
         {
-            Console.Write(PerfectSquare(78));
+            int[,] a = { { 1, 2 }, { 3, 4 } };
+            int[,] b = { { 5, 6 }, { 7, 8 } };
+            int[,] c = Sub(a, b);
+            for (int i = 0; i < c.GetLength(0); i++)
+            {
+                for (int j = 0; j < c.GetLength(0); j++)
+                {
+                    Console.Write(c[i, j]+" ");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
