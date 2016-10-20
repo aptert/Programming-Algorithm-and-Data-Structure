@@ -70,7 +70,6 @@ namespace Week_2
         static int[,] Operation(int[,] a, int[,] b)
         {
             int dimension = a.GetLength(0);
-            //int[,] c = new int[dimension, dimension];
             int[,] d = Add(a, b);
             for (int i = 0; i<d.GetLength(0); i++)
             {
@@ -82,6 +81,15 @@ namespace Week_2
             
             int [, ]c = Sub(Multiplcation(a, b),d);
             return c;
+        }
+
+        static string Reverse(string sentence)
+        {
+            string [] words = null;
+            for (int i = 0; i<sentence.Length; i++)
+            {
+               
+            }
         }
 
 
