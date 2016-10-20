@@ -11,7 +11,7 @@ namespace Week_2
         static int PerfectSquare(int n)
         {
             int square = 1;
-            for(int i = 0; i <= n; i++)
+            for (int i = 0; i <= n; i++)
             {
                 if (Math.Sqrt(i) % 1 == 0)
                 {
@@ -48,7 +48,7 @@ namespace Week_2
             }
             return c;
         }
-        static int[,] Multiplcation(int[,] a, int [,] b)
+        static int[,] Multiplcation(int[,] a, int[,] b)
         {
             int dimension = a.GetLength(0); //Matrices are the same size and they are square
             int[,] c = new int[dimension, dimension];
@@ -67,12 +67,29 @@ namespace Week_2
             return c;
         }
 
+        static int[,] Operation(int[,] a, int[,] b)
+        {
+            int dimension = a.GetLength(0);
+            //int[,] c = new int[dimension, dimension];
+            int[,] d = Add(a, b);
+            for (int i = 0; i<d.GetLength(0); i++)
+            {
+                for (int j = 0; j < d.GetLength(1); j++)
+                {
+                    d[i, j] = 2 * d[i, j];
+                }
+            }
+            
+            int [, ]c = Sub(Multiplcation(a, b),d);
+            return c;
+        }
+
 
         static void Main(string[] args)
         {
             int[,] a = { { 1, 2 }, { 3, 4 } };
             int[,] b = { { 5, 6 }, { 7, 8 } };
-            int[,] c = Sub(a, b);
+            int[,] c = Operation(a, b);
             for (int i = 0; i < c.GetLength(0); i++)
             {
                 for (int j = 0; j < c.GetLength(0); j++)
