@@ -111,10 +111,18 @@ namespace Week_2
 
             return finalsentence;
         }
-        /*static int PrimaryRecusrsive()
+        static bool PrimaryRecusrsive(int n, int i)
         {
-
-        }*/
+            if (i == n)
+            {
+                return true;
+            }
+            else if(n % i == 0)
+            {
+                return false;
+            }
+            return PrimaryRecusrsive(n, i + 1);
+        }
 
 
 
@@ -131,11 +139,13 @@ namespace Week_2
                 }
                 Console.WriteLine();
             }*/
-            string[] tab = Reverse("this is awesome");
+            /*string[] tab = Reverse("this is awesome");
             for (int i = 0; i < tab.Length; i++)
             {
                 Console.Write(tab[i]);
-            }
+            }*/
+
+            Console.WriteLine(PrimaryRecusrsive(24,2));
         }
     }
 }
