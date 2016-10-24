@@ -124,6 +124,22 @@ namespace Week_2
             return PrimaryRecusrsive(n, i + 1);
         }
 
+        static char RemoveVowel(string word)
+        {
+            for(int i = 0; i<word.Length; i++)
+            {
+                if (word[i] == 'a' || word[i] == 'e' || word[i] == 'i' || word[i] == 'o' || word[i] == 'u' || word[i] == 'y')
+                {
+                    return word[i];
+                }
+
+                else
+                {
+                    return RemoveVowel(word.Substring(1));
+                }
+            }
+        }
+
 
 
         static void Main(string[] args)
