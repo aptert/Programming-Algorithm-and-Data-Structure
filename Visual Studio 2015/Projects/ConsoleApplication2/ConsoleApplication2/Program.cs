@@ -82,20 +82,45 @@ namespace Week_2
             int [, ]c = Sub(Multiplcation(a, b),d);
             return c;
         }
-
-        static string Reverse(string sentence)
+       
+        static string [] Reverse(string sentence)
         {
-            string [] words = null;
-            for (int i = 0; i<sentence.Length; i++)
+            string newword = "";
+            int k = 0;
+            string [] words = new string [sentence.Length];
+            for (int i = 0; i < sentence.Length; i++)
             {
-               
+                if (sentence[i] != ' ')
+                {
+                    newword = newword + sentence[i];
+                }
+                else { words[k] = newword + " "; newword = ""; k++; }
+                if(i == sentence.Length-1)
+                {
+                    words[k] = newword + " ";
+                }
+                
             }
+            string[] finalsentence = new string[words.Length+1];
+            for (int i = 1; i < words.Length; i++)
+            {
+                finalsentence[i] = words[words.Length - i];
+            }
+            finalsentence[finalsentence.Length-1] = words[0];
+                    
+
+            return finalsentence;
         }
+        /*static int PrimaryRecusrsive()
+        {
+
+        }*/
+
 
 
         static void Main(string[] args)
         {
-            int[,] a = { { 1, 2 }, { 3, 4 } };
+            /*int[,] a = { { 1, 2 }, { 3, 4 } };
             int[,] b = { { 5, 6 }, { 7, 8 } };
             int[,] c = Operation(a, b);
             for (int i = 0; i < c.GetLength(0); i++)
@@ -105,6 +130,11 @@ namespace Week_2
                     Console.Write(c[i, j]+" ");
                 }
                 Console.WriteLine();
+            }*/
+            string[] tab = Reverse("this is awesome");
+            for (int i = 0; i < tab.Length; i++)
+            {
+                Console.Write(tab[i]);
             }
         }
     }
