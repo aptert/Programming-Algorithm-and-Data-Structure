@@ -133,10 +133,8 @@ namespace Week_2
                     return word[i];
                 }
 
-                else
-                {
+                
                     return RemoveVowel(word.Substring(1));
-                }
             }
         }
 
