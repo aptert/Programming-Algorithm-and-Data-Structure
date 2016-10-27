@@ -69,12 +69,64 @@ namespace ConsoleApplication1
             return tab[29];
         }
 
+        static void Matrix(int dim)
+        {
+            int countzero = 0;
+            int countnumber = 0;
+            int[,] matrix = new int[dim, dim];
+            Random number = new Random();
+            for (int i = 0; i < dim; i++)
+            {
+                for (int j = 0; j < dim; j++)
+                {
+                    matrix[i, j] = number.Next(0, 9);
+
+                }
+            }
+
+            for (int i = 0; i < dim; i++)
+            {
+                for (int j = 0; j < dim; j++)
+                {
+                    if (matrix[i, j] == 0)
+                    {
+                        countzero++;
+                    }
+                    else { countnumber++; }
+                }
+            }
+
+            while (countzero < countnumber)
+            {
+                for (int i = 0; i < dim; i++)
+                {
+                    for (int j = 0; j < dim; j++)
+                    {
+                        matrix[i, j] = number.Next(1);
+                        countzero--;
+                    }
+                }
+            }
+
+            for (int i = 0; i < dim; i++)
+            {
+                for (int j = 0; j < dim; j++)
+                {
+                    Console.Write(matrix[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
+
+
+
+
         static void Main(string[] args)
         {
             int [] tab = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             //ex1(tab);
-            Console.WriteLine("\n"+Alien(3,5));
-            
+            //Console.WriteLine("\n"+Alien(3,5));
+            Matrix(5);
         }
     }
 }
