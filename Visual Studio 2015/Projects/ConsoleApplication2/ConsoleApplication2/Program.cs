@@ -166,7 +166,7 @@ namespace Week_2
             }*/
 
             //Console.WriteLine(PrimaryRecusrsive(24,2));
-            Console.WriteLine(RemoveVowel("beutiful", 0));
+            Console.WriteLine(RemoveVowel("beautiful", 0));
         }
     }
 }
