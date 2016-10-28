@@ -130,7 +130,7 @@ namespace Week_2
             {
                 if (word[i] == 'a' || word[i] == 'e' || word[i] == 'i' || word[i] == 'o' || word[i] == 'u' || word[i] == 'y')
                 {
-                    return RemoveVowel(word.Remove(i,1), i + 1); 
+                    return RemoveVowel(word.Remove(i,1), i); 
                 }
                 else
                 {
@@ -166,7 +166,7 @@ namespace Week_2
             }*/
 
             //Console.WriteLine(PrimaryRecusrsive(24,2));
-            Console.WriteLine(RemoveVowel("beautiful", 0));
+            Console.WriteLine(RemoveVowel("Bonjour", 0));
         }
     }
 }
