@@ -144,6 +144,23 @@ namespace Week_2
                 
         }
 
+        static bool BinaryInterval(int a, int b)
+        {
+            int[] tab = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int middle = 0;
+            for (int i = 0; i<tab.Length; i++)
+            {
+                if (tab.Length % 2 == 0)
+                {
+                    middle = tab[tab.Length / 2];
+                }
+                else
+                {
+                    middle = tab[(tab.Length / 2) + 1];
+                }
+            }
+        }
+
 
 
         static void Main(string[] args)
