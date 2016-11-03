@@ -71,23 +71,23 @@ namespace Week_2
         {
             int dimension = a.GetLength(0);
             int[,] d = Add(a, b);
-            for (int i = 0; i<d.GetLength(0); i++)
+            for (int i = 0; i < d.GetLength(0); i++)
             {
                 for (int j = 0; j < d.GetLength(1); j++)
                 {
                     d[i, j] = 2 * d[i, j];
                 }
             }
-            
-            int [, ]c = Sub(Multiplcation(a, b),d);
+
+            int[,] c = Sub(Multiplcation(a, b), d);
             return c;
         }
-       
-        static string [] Reverse(string sentence)
+
+        static string[] Reverse(string sentence)
         {
             string newword = "";
             int k = 0;
-            string [] words = new string [sentence.Length];
+            string[] words = new string[sentence.Length];
             for (int i = 0; i < sentence.Length; i++)
             {
                 if (sentence[i] != ' ')
@@ -95,19 +95,19 @@ namespace Week_2
                     newword = newword + sentence[i];
                 }
                 else { words[k] = newword + " "; newword = ""; k++; }
-                if(i == sentence.Length-1)
+                if (i == sentence.Length - 1)
                 {
                     words[k] = newword + " ";
                 }
-                
+
             }
-            string[] finalsentence = new string[words.Length+1];
+            string[] finalsentence = new string[words.Length + 1];
             for (int i = 1; i < words.Length; i++)
             {
                 finalsentence[i] = words[words.Length - i];
             }
-            finalsentence[finalsentence.Length-1] = words[0];
-                    
+            finalsentence[finalsentence.Length - 1] = words[0];
+
 
             return finalsentence;
         }
@@ -117,7 +117,7 @@ namespace Week_2
             {
                 return true;
             }
-            else if(n % i == 0)
+            else if (n % i == 0)
             {
                 return false;
             }
@@ -130,7 +130,7 @@ namespace Week_2
             {
                 if (word[i] == 'a' || word[i] == 'e' || word[i] == 'i' || word[i] == 'o' || word[i] == 'u' || word[i] == 'y')
                 {
-                    return RemoveVowel(word.Remove(i,1), i); 
+                    return RemoveVowel(word.Remove(i, 1), i);
                 }
                 else
                 {
@@ -141,25 +141,39 @@ namespace Week_2
             {
                 return word;
             }
-                
+
         }
 
-        static bool BinaryInterval(int a, int b)
+        static bool BinarySearch(int a, int b)
         {
-            int[] tab = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            int middle = 0;
-            for (int i = 0; i<tab.Length; i++)
+            int[] tab = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int first = 0;
+            int last = tab.Length - 1;
+            if(a>tab[tab.Length -1] && b > tab[tab.Length - 1])
             {
-                if (tab.Length % 2 == 0)
+                return false;
+            }
+
+            while (last > first)
+            {
+                int mid = first + (last - first) / 2;
+                if (tab[mid] == a || tab[mid] == b || tab[mid] > a || tab[mid] < b)
                 {
-                    middle = tab[tab.Length / 2];
+                    return true;
                 }
-                else
+                else if (tab[mid] < a)
                 {
-                    middle = tab[(tab.Length / 2) + 1];
+                    first = mid + 1;
+                }
+                else if (tab[mid] > b)
+                {
+                    last = mid - 1;
                 }
             }
+            return false;
         }
+    
+
 
 
 
@@ -183,7 +197,8 @@ namespace Week_2
             }*/
 
             //Console.WriteLine(PrimaryRecusrsive(24,2));
-            Console.WriteLine(RemoveVowel("Bonjour", 0));
+            //Console.WriteLine(RemoveVowel("Bonjour", 0));
+            Console.WriteLine(BinarySearch(10,11));
         }
     }
 }
