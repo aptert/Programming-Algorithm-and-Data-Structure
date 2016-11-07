@@ -176,13 +176,27 @@ namespace Week_2
 
         static int [] AscendingNumbers(int [] tab)
         {
-            for (int i = 0; i < tab.Length; i++)
+            int longestlength = 0;
+            int start = 0;
+            int startlongest = 0;
+            int length = 0;
+            for (int i = 1; i<tab.Length; i++)
             {
-                if (tab[i] < tab[i + 1])
+                if (tab[i] < tab[i - 1])
                 {
-                    
+                    length = i - start;
+                    if (longestlength < length)
+                    {
+                        longestlength = length;
+                        startlongest = start;
+                    }
+                    start = i;
                 }
+                
             }
+
+            Console.WriteLine("longestlength : " + longestlength + "\nstartlongest : " + startlongest);
+            return tab;
         }
     
 
@@ -210,7 +224,10 @@ namespace Week_2
 
             //Console.WriteLine(PrimaryRecusrsive(24,2));
             //Console.WriteLine(RemoveVowel("Bonjour", 0));
-            Console.WriteLine(BinarySearch(10,11));
+
+            //Console.WriteLine(BinarySearch(10,11));
+            int[] tab = { 1, 2, 3, 4, 18, 14, 16, 7, 8, 9, 10, 11,12,13,14,15,16,17 };
+            AscendingNumbers(tab);
         }
     }
 }
