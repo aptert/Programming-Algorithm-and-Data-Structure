@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -171,6 +172,17 @@ namespace Week_2
                 }
             }
             return false;
+        }
+
+        static int [] AscendingNumbers(int [] tab)
+        {
+            for (int i = 0; i < tab.Length; i++)
+            {
+                if (tab[i] < tab[i + 1])
+                {
+                    
+                }
+            }
         }
     
 
