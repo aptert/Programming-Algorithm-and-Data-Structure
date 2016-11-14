@@ -1,1 +1,0 @@
-c:\users\tom\documents\visual studio 2015\Projects\WpfApplication2\WpfApplication2\bin\Debug\WpfApplication2.exe.config
