@@ -235,13 +235,13 @@ namespace Week_2
             //Console.WriteLine(PrimaryRecusrsive(24,2));
             //Console.WriteLine(RemoveVowel("Bonjour", 0));
 
-            //Console.WriteLine(BinarySearch(10,11));
-            int[] tab = { 1, 2, 3, 4,10 ,15, 18,23,30,89,90,1078, 14, 16, 7, 8, 9, 10, 11,12,13,14,15,16,17,1};
+            Console.WriteLine(BinarySearch(10,11));
+            /*int[] tab = { 1, 2, 3, 4,10 ,15, 18,23,30,89,90,1078, 14, 16, 7, 8, 9, 10, 11,12,13,14,15,16,17,1};
             int [] subsequence = AscendingNumbers(tab);
             for (int i =0; i <= subsequence.Length-1; i++)
             {
                 Console.Write(subsequence[i] + " |");
-            }
+            }*/
         }
     }
 }
