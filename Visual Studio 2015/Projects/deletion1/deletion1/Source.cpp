@@ -64,6 +64,9 @@ public:
 		if (this->tail == n) {
 			this->tail = n->prev;
 		}
+		if (this->head == n) {
+			this->head = n-> next
+		}
 	}
 	void display() {
 		Node* i = this->head;
