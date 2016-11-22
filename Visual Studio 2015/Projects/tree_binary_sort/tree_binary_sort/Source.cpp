@@ -52,13 +52,17 @@ void in_order(BinTreeNode* tree) {
 
 void in_order_iterative(BinTreeNode* tree) {
 	stack <BinTreeNode*> node;
-	while (tree->left != NULL) {
-		node.push(tree);
-		if (tree->right != NULL) {
-			std::cout << tree->value << std::endl;
-			node.pop();
+	node.push(tree);
+	while (node.top() != NULL) {
+		if (tree->left != NULL) {
+			node.push(tree->left);
+			tree = tree->left;
 		}
-		tree = tree->left;
+		if (tree->right != NULL) {
+			std::cout << node.top() -> value << std::endl;
+			node.pop();
+			node.push(tree->right);
+		}
 	}
 }
 
@@ -72,5 +76,6 @@ int main(int argc, char *argv[])
 	tree_insert(t, 4);
 	tree_insert(t, 11);
 	in_order(t);
+	getchar();
 	return 0;
 }
