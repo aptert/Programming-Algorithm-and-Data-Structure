@@ -51,22 +51,30 @@ public:
 			x->prev = 0;
 			x->next = 0;
 		}
-		else if (this->tail = n) {
+		else if (this->tail == n) {
 			this->tail = x;
 		}
 	}
 
 	void erase(Node* n) {
-		if (n != 0) {
+
+
+		if (n != 0 && n != this->tail && n != this->head) {
 			n->next->prev = n->prev;
 			n->prev->next = n->next;
 		}
+		
 		if (this->tail == n) {
 			this->tail = n->prev;
+			n->prev->next = 0;
 		}
 		if (this->head == n) {
-			this->head = n-> next
+			this->head = n->next;
+			n->next->prev = 0;
 		}
+
+		std::cout << "tail is " << std::endl;
+		std::cout << this->tail->value << std::endl;
 	}
 	void display() {
 		Node* i = this->head;
@@ -82,10 +90,17 @@ public:
 int main(int argc, char *argv[])
 {
 	List* l = new List();
-	l->insert(0, new Node(4));
+	Node *k = new Node(4);
+	l->insert(0, k);
 	Node *n = new Node(6);
 	l->insert(l->head, n);
-	l->insert(l->head ->next, new Node(8));
+	Node *m = new Node(8);
+	l->insert(l->head, m);
+
+	Node *t = new Node(10);
+	l->insert(l->head, t);
+	Node *p = new Node(12);
+	l->insert(l->head, p);
 	l->display();
 	//delete l;
 	std::cout << "am about to erase" << std::endl;
