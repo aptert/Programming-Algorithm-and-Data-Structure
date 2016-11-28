@@ -45,6 +45,9 @@ namespace unweighted_graph
             v2.Link(v1);
         }
 
-       
+        public void showGraph()
+        {
+            list.ToString();
+        }
     }
 }
