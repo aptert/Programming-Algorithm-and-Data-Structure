@@ -9,20 +9,24 @@ namespace unweighted_graph
     class Program
     {
 
-        static void DFS_iterative(Graph g, Vertex v)
+        static List<Vertex> DFS_iterative(Graph g, Vertex v)
         {
             Stack<Vertex> stack = new Stack<Vertex>();
             List<Vertex> visited = new List<Vertex>();
             stack.Push(v);
-            while (stack.Peek() != null)
+            while (stack.Count != 0) 
             {
                 Vertex u = stack.Pop();
                 if (!visited.Contains(u))
                 {
                     visited.Add(u);
-                    for ()
+                    foreach(Vertex w in v.getEdge())
+                    {
+                        stack.Push(w);
+                    }
                 }
             }
+            return visited;
         }
         static void Main(string[] args)
         {
@@ -44,6 +48,8 @@ namespace unweighted_graph
             g.addEdge(v3, v4);
             g.addEdge(v4, v5);
             g.addEdge(v3, v5);
+
+            Console.WriteLine(DFS_iterative(g, v1));
             Console.ReadKey();
 
         }

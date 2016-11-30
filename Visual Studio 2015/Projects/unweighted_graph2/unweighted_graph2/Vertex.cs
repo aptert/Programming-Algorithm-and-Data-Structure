@@ -24,10 +24,14 @@ namespace unweighted_graph
         }
 
         public int getLabel()
-        {
+        { 
             return label;
         }
 
+        public List<Vertex> getEdge()
+        {
+            return edge;
+        }
         public void Link(Vertex v)
         {
             if (!edge.Contains(v))
