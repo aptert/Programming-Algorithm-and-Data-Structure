@@ -45,16 +45,7 @@ namespace unweighted_graph
 
         }
 
-        public void toString()
-        {
-            Console.WriteLine("label: " + label);
-            Console.WriteLine("edge: " + edge.ToString());
-        }
-
-        public void breakLink(Vertex v1, Vertex v2)
-        {
-
-        }
+        
 
     }
 }
